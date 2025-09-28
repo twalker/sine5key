@@ -3,7 +3,8 @@ all: build test
 
 build:
 	@echo "Building..."
-	$go build -o ./bin/sine5key cmd/sine5key/main.go
+	@go build -o ./bin/sine5key cmd/sine5key/main.go
+	@GOOS=js GOARCH=wasm go build -o web/wasm/main.wasm web/wasm/main.go
 
 # Run the application
 run:
@@ -29,6 +30,7 @@ tidy:
 clean:
 	@echo "Cleaning..."
 	@rm -rf bin
+	@rm -f web/wasm/main.wasm
 
 # Live Reload
 dev:
