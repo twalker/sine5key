@@ -5,7 +5,7 @@ tmp_dir = "bin"
 [build]
   args_bin = []
   bin = "./bin/sine5key"
-  cmd = "go build -o ./bin/sine5key cmd/sine5key/*.go"
+  cmd = "go build -o ./bin/sine5key cmd/sine5key/*.go; GOOS=js GOARCH=wasm go build -o web/wasm/main.wasm web/wasm/main.go"
   delay = 1000
   exclude_dir = ["assets", "ben", "vendor", "testdata"]
   exclude_file = []

@@ -5,4 +5,5 @@ WebAssembly.instantiateStreaming(
 ).then((result) => {
   console.log("go.run...");
   go.run(result.instance);
+  greetGo("BrowserJS");
 });
