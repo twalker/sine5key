@@ -4,7 +4,7 @@ all: build test
 build:
 	@echo "Building..."
 	@go build -o ./bin/sine5key cmd/sine5key/main.go
-	@GOOS=js GOARCH=wasm go build -o web/wasm/main.wasm web/wasm/main.go
+	@GOOS=js GOARCH=wasm tinygo build -o web/wasm/main.wasm web/wasm/main.go
 
 # Run the application
 run:
