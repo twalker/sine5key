@@ -1,4 +1,32 @@
 body {
-    background-color: #000;
-    color: #888;
+    grid-template-columns: 1fr min(80rem, 90%) 1fr;
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+}
+.controls > label {
+    text-align: right;
+}
+
+.keys {
+    display: flex;
+    justify-items: stretch;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+.keys > .key {
+    flex: 1;
+    height: 20em;
+    margin: 5px;
+    border: 1px solid var(--text);
+    border-radius: 0 0 10px 10px;
+    background-color: navy;
+}
+
+.keys > .key:hover {
+    background-color: cornflowerblue;
 }

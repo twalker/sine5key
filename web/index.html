@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>sine5key</title>
         <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+        <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css" />
         <link rel="stylesheet" href="assets/css/styles.css" />
         <script src="wasm/wasm_exec.js"></script>
         <script src="assets/js/main.js" type="module"></script>
@@ -12,12 +13,90 @@
     <body>
         <h1>sine5key</h1>
         <main>
-            <form id="controls">
-                <select id="inputDevices" name="inputDevices">
-                    <option value="default">Default</option>
-                </select>
-            </form>
+            <section class="controls">
+                <label
+                    >MIDI in
+                    <select id="midiSource" name="midiSource">
+                        <option disabled>MIDI device</option>
+                    </select>
+                </label>
+                <label
+                    >Waveform
+                    <select id="wave" name="wave">
+                        <option disabled>waveform</option>
+                        <option value="sine">sine</option>
+                        <option value="square">square</option>
+                        <option value="sawtooth">sawtooth</option>
+                        <option value="triangle">triange</option>
+                    </select>
+                </label>
+                <label class="effects-container"
+                    >Effects
+                    <select id="effect1" name="effect1">
+                        <option value="none">none</option>
+                        <option value="reverb">reverb</option>
+                        <option value="delay">delay</option>
+                        <option value="compressor">compressor</option>
+                        <option value="distortion">distortion</option>
+                    </select>
+                    <select id="effect2" name="effect2">
+                        <option value="none">none</option>
+                        <option value="reverb">reverb</option>
+                        <option value="delay">delay</option>
+                        <option value="compressor">compressor</option>
+                        <option value="distortion">distortion</option>
+                    </select>
+                    <select id="effect3" name="effect3">
+                        <option value="none">none</option>
+                        <option value="reverb">reverb</option>
+                        <option value="delay">delay</option>
+                        <option value="compressor">compressor</option>
+                        <option value="distortion">distortion</option>
+                    </select>
+                </label>
+            </section>
+            <section>
+                <fieldset class="knob-container">
+                    <label>FX1</label>
+                    <input
+                        id="knob1"
+                        type="range"
+                        min="0"
+                        max="128"
+                        value="50"
+                        class="knob"
+                    />
+                </fieldset>
+                <fieldset class="knob-container">
+                    <label>FX2</label>
+                    <input
+                        id="knob2"
+                        type="range"
+                        min="0"
+                        max="128"
+                        value="50"
+                        class="knob"
+                    />
+                </fieldset>
+                <fieldset class="knob-container">
+                    <label>FX3</label>
+                    <input
+                        id="knob3"
+                        type="range"
+                        min="0"
+                        max="128"
+                        value="50"
+                        class="knob"
+                    />
+                </fieldset>
+            </section>
+            <section class="keys">
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+            </section>
         </main>
-        <button onclick="playAudio()">Play Audio from Go</button>
     </body>
 </html>

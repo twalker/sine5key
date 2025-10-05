@@ -5,8 +5,8 @@ export async function getMidiDevices() {
       console.log("MIDI Access granted:", midiAccess);
       return midiAccess;
     })
-    .catch((err) => {
-      console.error("Midi access error", err);
-      throw err;
+    .catch((error) => {
+      console.error("Midi access error", error);
+      throw error;
     });
 }
