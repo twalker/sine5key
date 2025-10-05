@@ -14,7 +14,23 @@
         <main>
             <h1>sine5key</h1>
             <article class="controls">
-                <section class="selects">
+                <section class="spectrogram">
+                    <canvas class="spectro" id="spectro">
+                        Your browser does not support the HTML canvas.
+                    </canvas>
+                </section>
+
+                <section class="selects clearfix">
+                    <label class="volslider">
+                        <input
+                            id="vol"
+                            type="range"
+                            min="0"
+                            max="128"
+                            value="50"
+                        />
+                        Volume
+                    </label>
                     <label
                         >MIDI in
                         <select id="midiSource" name="midiSource">

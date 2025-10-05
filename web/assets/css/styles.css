@@ -14,9 +14,24 @@ h1 {
 
 article.controls {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 0;
 }
+
+article.controls > section {
+    margin: 0;
+    padding: 1rem 0;
+}
+section.spectrogram canvas.spectro {
+    height: 200px;
+    width: 100%;
+    border: none;
+}
+
+article.controls > section {
+    border-bottom: none;
+}
+
 section.selects {
     border: none;
     margin: 1em;
@@ -28,9 +43,19 @@ section.effects {
     margin-bottom: 0;
 }
 
+section.effects fieldset:first-child {
+    background-color: #8d4743;
+}
+section.effects fieldset:nth-child(2) {
+    background-color: #999aa0;
+}
+section.effects fieldset:nth-child(3) {
+    background-color: #0082ad;
+}
+
 fieldset.effect {
-    margin-bottom: 0;
-    padding: 0;
+    margin-bottom: 0.5em;
+    padding: 0.25em;
     border: none;
 }
 fieldset.effect legend {
@@ -49,6 +74,19 @@ fieldset.effect input[type="range"] {
     width: 60%;
 }
 
+label.volslider {
+    writing-mode: vertical-rl;
+    float: right;
+    position: relative;
+}
+#vol {
+    writing-mode: vertical-lr;
+    direction: rtl;
+    position: absolute;
+    left: -1.5em;
+    height: 5em;
+}
+
 .keys {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -62,9 +100,11 @@ fieldset.effect input[type="range"] {
     border: 1px solid var(--text);
     border-radius: 0 0 10px 10px;
     background-color: navy;
+    background-color: #3d3e3d;
 }
 
 .keys > .key:hover,
 .keys > .key.on {
     background-color: cornflowerblue;
+    background-color: #ccc9c0;
 }
