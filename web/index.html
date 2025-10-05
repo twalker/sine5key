@@ -11,86 +11,85 @@
         <script src="assets/js/main.js" type="module"></script>
     </head>
     <body>
-        <h1>sine5key</h1>
         <main>
-            <section class="controls">
-                <label
-                    >MIDI in
-                    <select id="midiSource" name="midiSource">
-                        <option disabled>MIDI device</option>
-                    </select>
-                </label>
-                <label
-                    >Waveform
-                    <select id="wave" name="wave">
-                        <option disabled>waveform</option>
-                        <option value="sine">sine</option>
-                        <option value="square">square</option>
-                        <option value="sawtooth">sawtooth</option>
-                        <option value="triangle">triange</option>
-                    </select>
-                </label>
-                <label class="effects-container"
-                    >Effects
-                    <select id="effect1" name="effect1">
-                        <option value="none">none</option>
-                        <option value="reverb">reverb</option>
-                        <option value="delay">delay</option>
-                        <option value="compressor">compressor</option>
-                        <option value="distortion">distortion</option>
-                    </select>
-                    <select id="effect2" name="effect2">
-                        <option value="none">none</option>
-                        <option value="reverb">reverb</option>
-                        <option value="delay">delay</option>
-                        <option value="compressor">compressor</option>
-                        <option value="distortion">distortion</option>
-                    </select>
-                    <select id="effect3" name="effect3">
-                        <option value="none">none</option>
-                        <option value="reverb">reverb</option>
-                        <option value="delay">delay</option>
-                        <option value="compressor">compressor</option>
-                        <option value="distortion">distortion</option>
-                    </select>
-                </label>
-            </section>
-            <section>
-                <fieldset class="knob-container">
-                    <label>FX1</label>
-                    <input
-                        id="knob1"
-                        type="range"
-                        min="0"
-                        max="128"
-                        value="50"
-                        class="knob"
-                    />
-                </fieldset>
-                <fieldset class="knob-container">
-                    <label>FX2</label>
-                    <input
-                        id="knob2"
-                        type="range"
-                        min="0"
-                        max="128"
-                        value="50"
-                        class="knob"
-                    />
-                </fieldset>
-                <fieldset class="knob-container">
-                    <label>FX3</label>
-                    <input
-                        id="knob3"
-                        type="range"
-                        min="0"
-                        max="128"
-                        value="50"
-                        class="knob"
-                    />
-                </fieldset>
-            </section>
-            <section class="keys">
+            <h1>sine5key</h1>
+            <article class="controls">
+                <section class="selects">
+                    <label
+                        >MIDI in
+                        <select id="midiSource" name="midiSource">
+                            <option disabled>MIDI device</option>
+                        </select>
+                    </label>
+                    <label
+                        >Waveform
+                        <select id="wave" name="wave">
+                            <option disabled>waveform</option>
+                            <option value="sine">sine</option>
+                            <option value="square">square</option>
+                            <option value="sawtooth">sawtooth</option>
+                            <option value="triangle">triange</option>
+                        </select>
+                    </label>
+                </section>
+                <section class="effects">
+                    <fieldset class="effect clearfix">
+                        <legend>FX1</legend>
+                        <select id="effect1" name="effect1">
+                            <option value="none">none</option>
+                            <option value="reverb">reverb</option>
+                            <option value="delay">delay</option>
+                            <option value="compressor">compressor</option>
+                            <option value="distortion">distortion</option>
+                        </select>
+                        <input
+                            id="knob1"
+                            type="range"
+                            min="0"
+                            max="128"
+                            value="50"
+                            class="knob"
+                        />
+                    </fieldset>
+                    <fieldset class="effect clearfix">
+                        <legend>FX2</legend>
+                        <select id="effect2" name="effect2">
+                            <option value="none">none</option>
+                            <option value="reverb">reverb</option>
+                            <option value="delay">delay</option>
+                            <option value="compressor">compressor</option>
+                            <option value="distortion">distortion</option>
+                        </select>
+                        <input
+                            id="knob2"
+                            type="range"
+                            min="0"
+                            max="128"
+                            value="50"
+                            class="knob"
+                        />
+                    </fieldset>
+                    <fieldset class="effect clearfix">
+                        <legend>FX3</legend>
+                        <select id="effect3" name="effect3">
+                            <option value="none">none</option>
+                            <option value="reverb">reverb</option>
+                            <option value="delay">delay</option>
+                            <option value="compressor">compressor</option>
+                            <option value="distortion">distortion</option>
+                        </select>
+                        <input
+                            id="knob3"
+                            type="range"
+                            min="0"
+                            max="128"
+                            value="50"
+                            class="knob"
+                        />
+                    </fieldset>
+                </section>
+            </article>
+            <section id="keys" class="keys">
                 <div class="key"></div>
                 <div class="key"></div>
                 <div class="key"></div>

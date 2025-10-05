@@ -4,6 +4,7 @@ export class App {
   constructor() {
     this.elMidiSource = document.getElementById("midiSource");
     this.elWave = document.getElementById("wave");
+    this.elKeys = document.getElementById("keys");
   }
 
   async init() {
@@ -22,10 +23,27 @@ export class App {
     }
 
     const audioCtx = new AudioContext();
+    if (audioCtx.state === "suspended") {
+      audioCtx.resume();
+    }
     const oscillator = audioCtx.createOscillator();
     const gainNode = audioCtx.createGain();
-    // this.elMidiSource.addEventListener('change', function onMidiSourceChange(e) {
-
-    // })
+    this.elMidiSource.addEventListener(
+      "change",
+      function onMidiSourceChange(e) {
+        console.log("TODO: change midi source");
+      },
+    );
+    this.elKeys.addEventListener("click", this.onKeysClick.bind(this));
+  }
+  onKeysClick(e) {
+    const elKey = e.target.closest(".key");
+    if (!elKey) {
+      return;
+    }
+    elKey.classList.toggle("on");
+    const elKeys = Array.from(this.elKeys.querySelectorAll(".key"));
+    const idx = elKeys.indexOf(elKey);
+    console.log("clicked", idx, elKey);
   }
 }
