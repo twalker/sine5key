@@ -1,4 +1,4 @@
-import { getMidiDevices } from "./midi.js";
+import { getMidiDevices, getMidiMessage } from "./midi.js";
 
 export class App {
   constructor() {
@@ -20,12 +20,15 @@ export class App {
       console.log(
         `Input port [type:'${input.type}'] id:'${input.id}' name:'${input.name}'`,
       );
+      input.addEventListener("midimessage", this.onMIDIMessage.bind(this));
     }
 
     const audioCtx = new AudioContext();
     if (audioCtx.state === "suspended") {
       audioCtx.resume();
     }
+    this.audioCtx = audioCtx;
+
     const oscillator = audioCtx.createOscillator();
     const gainNode = audioCtx.createGain();
     this.elMidiSource.addEventListener(
@@ -45,5 +48,12 @@ export class App {
     const elKeys = Array.from(this.elKeys.querySelectorAll(".key"));
     const idx = elKeys.indexOf(elKey);
     console.log("clicked", idx, elKey);
+  }
+
+  onMIDIMessage(e) {
+    const msg = getMidiMessage(e);
+    if (msg) {
+      console.log(msg);
+    }
   }
 }

@@ -10,5 +10,10 @@ WebAssembly.instantiateStreaming(
   greetGo("BrowserJS");
 });
 
-const app = new App();
-app.init();
+function onStartClick(e) {
+  console.log("Starting");
+  const app = new App();
+  app.init();
+}
+
+document.getElementById("start").addEventListener("click", onStartClick);
